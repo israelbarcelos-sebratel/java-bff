@@ -15,12 +15,15 @@ public class EstoqueService {
     private final EstoqueRepository repository;
 
     public List<EstoqueTecnicoDTO> buscarEstoquePorTecnico(String nome) {
+        // Agora o repositório já retorna uma lista de EstoqueView (Interface)
         return repository.findEstoqueByTecnicoNative(nome).stream()
-                .map(obj -> new EstoqueTecnicoDTO(
-                        (String) obj[0],
-                        (String) obj[1],
-                        (String) obj[2],
-                        ((Number) obj[3]).longValue()
+                .map(view -> new EstoqueTecnicoDTO(
+
+                        view.getCodigo(),
+                        view.getDescricao(),
+                        view.getTecnico(),
+                        view.getPossui() != null ? view.getPossui().longValue() : 0L,
+                        view.getId()
                 ))
                 .collect(Collectors.toList());
     }
