@@ -7,13 +7,13 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://186.219.128.251:5432/dbemp00100
       - SPRING_DATASOURCE_USERNAME=cliente_s
       - SPRING_DATASOURCE_PASSWORD=mHWIg8o1V:4v
-      - SPRING_DATA_REDIS_HOST=redis-cache
+      - SPRING_DATA_REDIS_HOST=redis-cache-java
       - SPRING_DATA_REDIS_PORT=6379
     depends_on:
-      - redis-cache
+      - redis-cache-java
 
-  redis-cache:
+  redis-cache-java:
     image: redis:alpine
-    container_name: redis-cache
+    container_name: redis-cache-java
     ports:
       - "6379:6379"
