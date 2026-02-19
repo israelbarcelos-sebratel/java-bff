@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/estoque")
+@RequestMapping("/api/v1/estoque")
 public class MovimentacaoEstoqueController {
 
     private final MovimentacaoEstoqueService movimentacaoEstoqueService;
