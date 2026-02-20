@@ -1,14 +1,23 @@
-# Usa o Java 21 (versão leve)
-FROM eclipse-temurin:21-jre-alpine
-
-# Define o diretório de trabalho
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copia o seu JAR para dentro do container
-COPY ./target/bff-0.0.1-SNAPSHOT.jar app.jar
+# Otimização: Copia apenas o pom.xml primeiro para baixar as dependências
+# Isso agiliza builds futuros se você não mudar as dependências
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Expõe a porta que o Spring usa
+# Copia o código fonte e gera o JAR
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Estágio 2: Runtime (Container leve para rodar)
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+
+# Copia apenas o JAR gerado no estágio anterior
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
 
-# Comando para rodar a aplicação
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Melhores práticas: define limites de memória para o Java no container
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-Xmx512m", "-jar", "app.jar"]
