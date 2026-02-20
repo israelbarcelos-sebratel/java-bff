@@ -1,7 +1,7 @@
 package br.com.sebratel.bff.service;
 
 import br.com.sebratel.bff.dto.EstoqueTecnicoDTO;
-import br.com.sebratel.bff.repository.EstoqueRepository;
+import br.com.sebratel.bff.repository.erp.EstoqueRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

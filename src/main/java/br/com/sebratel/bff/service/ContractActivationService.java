@@ -1,7 +1,7 @@
 package br.com.sebratel.bff.service;
 
 import br.com.sebratel.bff.dto.ContractActivationDTO;
-import br.com.sebratel.bff.repository.ContractActivationRepository;
+import br.com.sebratel.bff.repository.erp.ContractActivationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

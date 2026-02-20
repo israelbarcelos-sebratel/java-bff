@@ -1,6 +1,6 @@
 package br.com.sebratel.bff.service;
 
-import br.com.sebratel.bff.repository.ContractPaymentRepository;
+import br.com.sebratel.bff.repository.erp.ContractPaymentRepository;
 import br.com.sebratel.bff.dto.ContractFirstPaymentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;

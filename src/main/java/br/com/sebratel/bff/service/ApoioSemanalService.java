@@ -1,7 +1,8 @@
 package br.com.sebratel.bff.service;
 
 import br.com.sebratel.bff.dto.RelatorioFinalDTO;
-import br.com.sebratel.bff.repository.ContractActivationRepository;
+import br.com.sebratel.bff.repository.erp.ContractActivationRepository;
+import br.com.sebratel.bff.repository.erp.projections.ContractActivationProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -59,7 +60,7 @@ public class ApoioSemanalService {
                 });
     }
 
-    private RelatorioFinalDTO mapToDTO(br.com.sebratel.bff.repository.projections.ContractActivationProjection p) {
+    private RelatorioFinalDTO mapToDTO(ContractActivationProjection p) {
         String mesDescritivo = "";
         if (p.getDataCriacaoContrato() != null) {
             mesDescritivo = p.getDataCriacaoContrato()

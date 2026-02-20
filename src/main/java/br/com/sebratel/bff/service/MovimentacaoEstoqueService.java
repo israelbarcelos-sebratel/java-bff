@@ -1,8 +1,8 @@
 package br.com.sebratel.bff.service;
 
 import br.com.sebratel.bff.dto.MovimentacaoEstoqueDTO;
-import br.com.sebratel.bff.repository.MovimentacaoEstoqueRepository;
-import br.com.sebratel.bff.repository.projections.MovimentacaoEstoqueProjection;
+import br.com.sebratel.bff.repository.erp.MovimentacaoEstoqueRepository;
+import br.com.sebratel.bff.repository.erp.projections.MovimentacaoEstoqueProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

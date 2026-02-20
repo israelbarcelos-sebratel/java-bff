@@ -1,6 +1,6 @@
 package br.com.sebratel.bff.dto;
 
-import br.com.sebratel.bff.repository.projections.VendedoresProjection;
+import br.com.sebratel.bff.repository.erp.projections.VendedoresProjection;
 
 
 public record VendedoresAtivosDTO(String nome, String email) {

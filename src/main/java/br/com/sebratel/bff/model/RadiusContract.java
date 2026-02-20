@@ -5,8 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "contracts", schema = "erp")
-public class Contract {
+@Table(name = "contracts", schema = "radius")
+public class RadiusContract {
     @Id
     private Long id;
 }
