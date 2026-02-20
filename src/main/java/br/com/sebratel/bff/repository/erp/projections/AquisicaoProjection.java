@@ -1,14 +1,14 @@
 package br.com.sebratel.bff.repository.erp.projections;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public interface AquisicaoProjection {
     Long getId();
     String getCodigo();
     String getProduto();
-    LocalDateTime getData();
+    LocalDate getData();
     String getRequisitadoPor();
-    LocalDateTime getDataPrevisao();
+    LocalDate getDataPrevisao();
     Double getUnidades();
     String getBase();
     String getStatus();

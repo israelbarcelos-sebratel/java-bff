@@ -1,14 +1,14 @@
 package br.com.sebratel.bff.dto;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public record AquisicaoDTO(
         Long id,
         String codigo,
         String produto,
-        LocalDateTime data,
+        LocalDate data,
         String requisitadoPor,
-        LocalDateTime dataPrevisao,
+        LocalDate dataPrevisao,
         Double unidades,
         String base,
         String status
