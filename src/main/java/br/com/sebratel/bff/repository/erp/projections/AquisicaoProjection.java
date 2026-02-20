@@ -1,4 +1,4 @@
-package br.com.sebratel.bff.repository.radius.projections;
+package br.com.sebratel.bff.repository.erp.projections;
 
 import java.time.LocalDateTime;
 

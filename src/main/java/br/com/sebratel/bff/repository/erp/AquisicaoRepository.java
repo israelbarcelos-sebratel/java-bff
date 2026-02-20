@@ -1,7 +1,7 @@
-package br.com.sebratel.bff.repository.radius;
+package br.com.sebratel.bff.repository.erp;
 
-import br.com.sebratel.bff.model.RadiusContract;
-import br.com.sebratel.bff.repository.radius.projections.AquisicaoProjection;
+import br.com.sebratel.bff.model.ErpContract;
+import br.com.sebratel.bff.repository.erp.projections.AquisicaoProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AquisicaoRepository extends JpaRepository<RadiusContract, Long> {
+public interface AquisicaoRepository extends JpaRepository<ErpContract, Long> {
 
     @Query(value = """
             

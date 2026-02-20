@@ -1,7 +1,7 @@
 package br.com.sebratel.bff.service;
 
 import br.com.sebratel.bff.dto.AquisicaoDTO;
-import br.com.sebratel.bff.repository.radius.AquisicaoRepository;
+import br.com.sebratel.bff.repository.erp.AquisicaoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
