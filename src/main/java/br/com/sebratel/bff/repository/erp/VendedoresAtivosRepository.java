@@ -1,7 +1,7 @@
-package br.com.sebratel.bff.repository;
+package br.com.sebratel.bff.repository.erp;
 
-import br.com.sebratel.bff.model.Contract;
-import br.com.sebratel.bff.repository.projections.VendedoresProjection;
+import br.com.sebratel.bff.model.ErpContract;
+import br.com.sebratel.bff.repository.erp.projections.VendedoresProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface VendedoresAtivosRepository extends JpaRepository<Contract, Long> {
+public interface VendedoresAtivosRepository extends JpaRepository<ErpContract, Long> {
 
     @Query(value = """
         SELECT 
