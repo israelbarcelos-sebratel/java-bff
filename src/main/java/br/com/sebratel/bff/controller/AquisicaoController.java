@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/aquisicoes")
+@RequestMapping("/api/v1/aquisicoes")
 public class AquisicaoController {
 
     private final AquisicaoService service;
@@ -19,7 +19,7 @@ public class AquisicaoController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/recuperar-pedidos-de-aquisicao")
     public ResponseEntity<List<AquisicaoDTO>> getAquisicoes() {
         return ResponseEntity.ok(service.listarAquisicoes());
     }
