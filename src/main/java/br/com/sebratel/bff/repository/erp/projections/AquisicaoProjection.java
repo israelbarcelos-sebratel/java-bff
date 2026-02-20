@@ -9,7 +9,7 @@ public interface AquisicaoProjection {
     LocalDate getData();
     String getRequisitadoPor();
     LocalDate getDataPrevisao();
-    Double getUnidades();
+    Double getOutrosStatus();
     String getBase();
     String getStatus();
 }

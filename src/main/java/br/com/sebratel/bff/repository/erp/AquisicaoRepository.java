@@ -15,12 +15,12 @@ public interface AquisicaoRepository extends JpaRepository<ErpContract, Long> {
             
                 SELECT
                     par.id,
-                    sp.code AS "CÓDIGO",
-                    sp.title AS "PRODUTO",
-                    par.date AS "DATA",
-                    p.name AS "REQUISITADO POR",
-                    par.receipt_date_prevision AS "DATA PREVISÃO",
-                    pari.units AS "OUTROS STATUS",
+                    sp.code AS "codigo",
+                    sp.title AS "produto",
+                    par.date AS "data",
+                    p.name AS "requisitadoPor",
+                    par.receipt_date_prevision AS "dataPrevisao",
+                    pari.units AS "outrosStatus",
                         CASE\s
                             WHEN UPPER(par.observation) LIKE '%SCHARLAU%' THEN 'BASE OPERACIONAL - SÃO LEOPOLDO'
                             WHEN UPPER(par.observation) LIKE '%VICTOR BARRETO%' THEN 'BASE OPERACIONAL - CANOAS'
@@ -30,7 +30,7 @@ public interface AquisicaoRepository extends JpaRepository<ErpContract, Long> {
                             WHEN par.status = 4 THEN 'Aguardando Entrega'
                             WHEN par.status = 2 THEN 'Em Aprovação'
                             WHEN par.status = 1 THEN 'Inclusão'
-                        END AS "STATUS"
+                        END AS "status"
                 FROM product_acquisition_requests par
                 LEFT JOIN product_acquisition_request_items AS pari ON pari.product_acquisition_request_id = par.id
                 LEFT JOIN service_products sp ON sp.id = pari.service_product_id
